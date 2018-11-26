@@ -1,0 +1,52 @@
+CREATE TABLE `book` (
+  `book_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(128) NOT NULL,
+  `description` varchar(512) NOT NULL,
+  `published` date NOT NULL,
+  `author_id` int(11) NOT NULL,
+  PRIMARY KEY (`book_id`),
+  KEY `author_fk` (`author_id`),
+  CONSTRAINT `author_fk` FOREIGN KEY (`author_id`) REFERENCES `author` (`author_id`)
+);
+
+
+
+CREATE TABLE `sonoo`.`employees` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `designation` VARCHAR(45) NULL,
+  `expertise` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+  
+  CREATE TABLE `sonoo`.`employees` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `designation` VARCHAR(45) NULL,
+  `expertise` VARCHAR(45) NULL,
+  `createdAt` date NOT NULL,
+  PRIMARY KEY (`id`));
+
+
+CREATE TABLE `sonoo`.`task` (
+  `task_id` INT NOT NULL AUTO_INCREMENT,
+  parent_id INT NOT NULL,
+  project_id INT NOT NULL,
+  `task` VARCHAR(45) NULL,
+  `priority` VARCHAR(45) NULL,
+  `status` VARCHAR(45) NULL,
+  PRIMARY KEY (`task_id`));
+  
+  CREATE TABLE `sonoo`.`project` (
+  `project_id` INT NOT NULL AUTO_INCREMENT,
+  `project` VARCHAR(45) NULL,
+  `priority` VARCHAR(45) NULL,
+  PRIMARY KEY (`project_id`));
+  
+  CREATE TABLE `sonoo`.`users` (
+  `user_id` INT NOT NULL AUTO_INCREMENT,
+  `first_name` VARCHAR(45) NULL,
+  `last_name` VARCHAR(45) NULL,
+  employee_id INT NOT NULL,
+  project_id INT NOT NULL,
+  task_id INT NOT NULL,
+    PRIMARY KEY (`user_id`));

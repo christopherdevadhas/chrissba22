@@ -1,0 +1,16 @@
+POST
+
+http://localhost:8080/company/employees/
+
+{
+"name":"chris","designation":"associate","expertise":"medium" 
+}
+
+GET
+http://localhost:8080/company/employees/
+
+
+
+GET/PUT/DELETE
+http://localhost:8080/company/employees/1
+
